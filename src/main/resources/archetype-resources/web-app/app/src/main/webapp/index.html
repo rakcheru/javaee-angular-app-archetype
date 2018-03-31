@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+</head>
+<body>
+  <!-- Angular Area : Start -->
+  <div class="ng2" style="text-align:center; border: 1px solid darkgreen; padding: 5px">
+    <div class="index">
+      <index></index>
+    </div>
+  </div>
+  <!-- Angular Area : End -->
+  
+  <div style="padding: 25px"></div>
+  
+  <!-- AngularJS Area : Start -->
+  <div class="ng1">
+    <div data-ng-app="rootModule">
+      <!-- every ng-controller will create a new instance of that controller -->
+      <div data-ng-controller="rootController" style="border: 1px solid blue; padding: 5px; text-align: center">
+        {{message}}
+      </div>
+    </div>
+  </div>
+  <!-- AngularJS Area : End -->
+</body>
+</html>

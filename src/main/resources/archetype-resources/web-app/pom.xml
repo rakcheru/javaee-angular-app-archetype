@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>${rootArtifactId}</artifactId>
+    <groupId>org.learning</groupId>
+    <version>1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>org.learning.${rootArtifactId}</groupId>
+  <artifactId>web-app</artifactId>
+  <modules>
+    <module>app</module>
+    <module>ejb</module>
+    <module>ejb-util</module>
+    <module>model</module>
+  </modules>
+  <packaging>pom</packaging>
+  
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.learning.${rootArtifactId}</groupId>
+        <artifactId>utility-jar</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.learning.${rootArtifactId}.web-app</groupId>
+        <artifactId>ejb-util</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.learning.${rootArtifactId}.web-app</groupId>
+        <artifactId>ejb</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.learning.${rootArtifactId}.web-app</groupId>
+        <artifactId>model</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+  
+      <!-- Persistence : START -->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.2.15.Final</version>
+        <scope>provided</scope>
+      </dependency>
+  
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>1.4.193</version>
+        <scope>provided</scope>
+      </dependency>
+      <!-- Persistence : END -->
+
+    </dependencies>
+  </dependencyManagement>
+</project>
